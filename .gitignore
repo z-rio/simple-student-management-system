@@ -1,0 +1,14 @@
+*env
+
+__pycache__/
+*.pyc
+*.pyo
+
+*.DS_Store
+*.egg-info/
+
+.sqlite3
+*.json
+*.log
+
+.env
