@@ -21,3 +21,20 @@ def delete_student(student_id):
         student.delete()
         return True
     return False
+
+def search_student_by_name(name):
+    return Student.objects.filter(name__icontains=name)
+
+
+def update_student(student_id, name=None, email=None, age=None):
+    student = get_student_by_id(student_id)
+    if student:
+        if name is not None:
+            student.name = name
+        if email is not None:
+            student.email = email
+        if age is not None:
+            student.age = age
+        student.save()
+        return student
+    return None
